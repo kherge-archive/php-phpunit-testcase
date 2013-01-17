@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Php-phpunit-testcase by herrera-io</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Php-phpunit-testcase</h1>
+        <p>A PHPUnit test case class with additional functionality.</p>
+
+        <p class="view"><a href="https://github.com/herrera-io/php-phpunit-testcase">View the Project on GitHub <small>herrera-io/php-phpunit-testcase</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/herrera-io/php-phpunit-testcase/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/herrera-io/php-phpunit-testcase/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/herrera-io/php-phpunit-testcase">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>PHPUnit TestCase</h1>
+
+<p><a href="https://travis-ci.org/herrera-io/php-phpunit-testcase"><img src="https://travis-ci.org/herrera-io/php-phpunit-testcase.png?branch=master" alt="Build Status"></a></p>
+
+<p>A PHPUnit test case class with additional functionality.</p>
+
+<h2>Usage</h2>
+
+<div class="highlight"><pre><span class="k">use</span> <span class="nx">Herrera\PHPUnit\TestCase</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">MyTest</span> <span class="k">extends</span> <span class="nx">TestCase</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">testCallProtected</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$object</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyClass</span><span class="p">();</span>
+
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">callMethod</span><span class="p">(</span><span class="nv">$object</span><span class="p">,</span> <span class="s1">'protectedMethod'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">'args'</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/herrera-io">herrera-io</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
