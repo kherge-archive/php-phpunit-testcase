@@ -9,7 +9,7 @@
         }
     ],
     "suggest": {
-        "phpunit": ">=5.3.*"
+        "phpunit": ">=3.7.*"
     },
     "autoload": {
         "psr-0": {
