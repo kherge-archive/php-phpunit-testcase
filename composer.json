@@ -9,7 +9,7 @@
         }
     ],
     "suggest": {
-        "phpunit": ">=5.3.*"
+        "phpunit": ">=3.7.*"
     },
     "autoload": {
         "psr-0": {
@@ -20,6 +20,7 @@
         "phpunit/phpunit": "3.7.*"
     },
     "config": {
+        "bin-dir": "bin",
         "vendor-dir": "src/vendors"
     }
 }
