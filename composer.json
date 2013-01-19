@@ -20,6 +20,7 @@
         "phpunit/phpunit": "3.7.*"
     },
     "config": {
+        "bin-dir": "bin",
         "vendor-dir": "src/vendors"
     }
 }
