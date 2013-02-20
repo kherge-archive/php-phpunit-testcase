@@ -16,7 +16,8 @@
   </filter>
   <testsuites>
     <testsuite name="Box Test Suite">
-      <directory phpVersion="5.3.0" phpVersionOperator=">=" suffix="Test.php">src/tests/</directory>
+      <file phpVersion="5.3.0" phpVersionOperator=">=">src/tests/Herrera/PHPUnit/TestCaseTest.php</file>
+      <file phpVersion="5.4.0" phpVersionOperator=">=">src/tests/Herrera/PHPUnit/ExtrasTest.php</file>
     </testsuite>
   </testsuites>
 </phpunit>
