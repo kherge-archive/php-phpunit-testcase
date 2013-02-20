@@ -3,16 +3,18 @@ PHPUnit TestCase
 
 [![Build Status](https://travis-ci.org/herrera-io/php-phpunit-testcase.png?branch=master)](https://travis-ci.org/herrera-io/php-phpunit-testcase)
 
-A PHPUnit test case class with additional functionality.
+A PHPUnit test case class and trait with additional functionality.
 
 Summary
 -------
 
-The `TestCase` class provides additional methods for performing basic, repetitive tasks such as:
+The `TestCase` class and `Extras` trait provide additional methods for performing basic, repetitive tasks such as:
 
 - creating and deleting temporary files and directories
 - calling protected and private methods
 - retrieving and setting protected and private properties
+
+> **NOTE** Both `TestCase` and `Extras` are identical, except the former being a class and the latter being a trait.
 
 Installation
 ------------
@@ -26,7 +28,7 @@ $ composer require herrera-io/phpunit-test-case=1.*
 Usage
 -----
 
-To use `TestCase`, you extend it as you would an ordinary PHPUnit test case:
+### The `TestCase` class
 
 ```php
 <?php
@@ -37,4 +39,17 @@ class MyTestCase extends Herrera\PHPUnit\TestCase
 }
 ```
 
-If your test class provides its own `tearDown()` method, make sure to call the parent `tearDown()` method as well. `TestCase` uses the tear down process to clean up temporary files and directories.
+### The `Extras` trait
+
+```php
+<?php
+
+class MyTestCase extends My\Own\Custom\TestCase
+{
+    use Herrera\PHPUnit\Extras;
+
+    // my tests
+}
+```
+
+> **NOTE** If your test class provides its own `tearDown()` method, make sure to call the class's or trait's `tearDown()` method as well. `TestCase` and `Extras` uses the tear down process to clean up temporary files and directories.
