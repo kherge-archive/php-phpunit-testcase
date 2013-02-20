@@ -1,26 +1,40 @@
 {
     "name": "herrera-io/phpunit-test-case",
     "description": "A PHPUnit test case class with additional functionality.",
+    "keywords": ["phpunit", "test"],
+    "homepage": "http://herrera-io.github.com/php-phpunit-testcase",
     "license": "MIT",
     "authors": [
         {
             "name": "Kevin Herrera",
-            "email": "kevin@herrera.io"
+            "email": "kevin@herrera.io",
+            "homepage": "http://kevin.herrera.io/"
         }
     ],
+    "support": {
+        "issues": "https://github.com/herrera-io/php-phpunit-testcase/issues"
+    },
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+    },
     "suggest": {
-        "phpunit": ">=3.7.*"
+        "phpunit": "For the latest version of PHPUnit 3.7."
     },
     "autoload": {
         "psr-0": {
             "Herrera\\PHPUnit": "src/lib"
         }
     },
-    "require-dev": {
-        "phpunit/phpunit": "3.7.*"
-    },
     "config": {
         "bin-dir": "bin",
         "vendor-dir": "src/vendors"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        }
     }
 }
