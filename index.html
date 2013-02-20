@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Php-phpunit-testcase by herrera-io</title>
+    <title>PHPUnit TestCase by herrera-io</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
@@ -15,7 +15,7 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1>Php-phpunit-testcase</h1>
+        <h1>PHPUnit TestCase</h1>
         <p>A PHPUnit test case class with additional functionality.</p>
 
         <p class="view"><a href="https://github.com/herrera-io/php-phpunit-testcase">View the Project on GitHub <small>herrera-io/php-phpunit-testcase</small></a></p>
@@ -34,20 +34,34 @@
 
 <p>A PHPUnit test case class with additional functionality.</p>
 
+<h2>Summary</h2>
+
+<p>The <code>TestCase</code> class provides additional methods for performing basic, repetitive tasks such as:</p>
+
+<ul>
+<li>creating and deleting temporary files and directories</li>
+<li>calling protected and private methods</li>
+<li>retrieving and setting protected and private properties</li>
+</ul><h2>Installation</h2>
+
+<p>Add it to your list of Composer dependencies:</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>composer require herrera-io/phpunit-test-case<span class="o">=</span>1.*
+</pre></div>
+
 <h2>Usage</h2>
 
-<div class="highlight"><pre><span class="k">use</span> <span class="nx">Herrera\PHPUnit\TestCase</span><span class="p">;</span>
+<p>To use <code>TestCase</code>, you extend it as you would an ordinary PHPUnit test case:</p>
 
-<span class="k">class</span> <span class="nc">MyTest</span> <span class="k">extends</span> <span class="nx">TestCase</span>
+<div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="k">class</span> <span class="nc">MyTestCase</span> <span class="k">extends</span> <span class="nx">Herrera\PHPUnit\TestCase</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">testCallProtected</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="nv">$object</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyClass</span><span class="p">();</span>
-
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">callMethod</span><span class="p">(</span><span class="nv">$object</span><span class="p">,</span> <span class="s1">'protectedMethod'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">'args'</span><span class="p">));</span>
-    <span class="p">}</span>
+    <span class="c1">// my tests</span>
 <span class="p">}</span>
 </pre></div>
+
+<p>If your test class provides its own <code>tearDown()</code> method, make sure to call the parent <code>tearDown()</code> method as well. <code>TestCase</code> uses the tear down process to clean up temporary files and directories.</p>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/herrera-io">herrera-io</a></p>
