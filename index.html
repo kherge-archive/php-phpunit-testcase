@@ -32,17 +32,21 @@
 
 <p><a href="https://travis-ci.org/herrera-io/php-phpunit-testcase"><img src="https://travis-ci.org/herrera-io/php-phpunit-testcase.png?branch=master" alt="Build Status"></a></p>
 
-<p>A PHPUnit test case class with additional functionality.</p>
+<p>A PHPUnit test case class and trait with additional functionality.</p>
 
 <h2>Summary</h2>
 
-<p>The <code>TestCase</code> class provides additional methods for performing basic, repetitive tasks such as:</p>
+<p>The <code>TestCase</code> class and <code>Extras</code> trait provide additional methods for performing basic, repetitive tasks such as:</p>
 
 <ul>
 <li>creating and deleting temporary files and directories</li>
 <li>calling protected and private methods</li>
 <li>retrieving and setting protected and private properties</li>
-</ul><h2>Installation</h2>
+</ul><blockquote>
+<p><strong>NOTE</strong> Both <code>TestCase</code> and <code>Extras</code> are identical, except the former being a class and the latter being a trait.</p>
+</blockquote>
+
+<h2>Installation</h2>
 
 <p>Add it to your list of Composer dependencies:</p>
 
@@ -51,7 +55,7 @@
 
 <h2>Usage</h2>
 
-<p>To use <code>TestCase</code>, you extend it as you would an ordinary PHPUnit test case:</p>
+<h3>The <code>TestCase</code> class</h3>
 
 <div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
 
@@ -61,7 +65,21 @@
 <span class="p">}</span>
 </pre></div>
 
-<p>If your test class provides its own <code>tearDown()</code> method, make sure to call the parent <code>tearDown()</code> method as well. <code>TestCase</code> uses the tear down process to clean up temporary files and directories.</p>
+<h3>The <code>Extras</code> trait</h3>
+
+<div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="k">class</span> <span class="nc">MyTestCase</span> <span class="k">extends</span> <span class="nx">My\Own\Custom\TestCase</span>
+<span class="p">{</span>
+    <span class="k">use</span> <span class="nx">Herrera\PHPUnit\Extras</span><span class="p">;</span>
+
+    <span class="c1">// my tests</span>
+<span class="p">}</span>
+</pre></div>
+
+<blockquote>
+<p><strong>NOTE</strong> If your test class provides its own <code>tearDown()</code> method, make sure to call the class's or trait's <code>tearDown()</code> method as well. <code>TestCase</code> and <code>Extras</code> uses the tear down process to clean up temporary files and directories.</p>
+</blockquote>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/herrera-io">herrera-io</a></p>
