@@ -7,6 +7,7 @@ use Herrera\PHPUnit\Exception\ReflectionException;
 use ReflectionClass;
 use ReflectionMethod;
 use ReflectionProperty;
+use Symfony\Component\Process\ProcessBuilder;
 
 /**
  * A PHPUnit test case trait for additional functionality.
@@ -264,6 +265,22 @@ s    */
                 throw FileSystemException::lastError($path);
             }
         }
+    }
+
+    /**
+     * Creates a new Process and returns its ran instance.
+     *
+     * @param string $command The command.
+     * @param mixed  $arg,... An argument.
+     *
+     * @return Process The ran process.
+     */
+    public function runProcess()
+    {
+        $process = ProcessBuilder::create(func_get_args())->getProcess();
+        $process->run();
+
+        return $process;
     }
 
     /**
