@@ -179,6 +179,16 @@ class TestCaseTest extends TestCase
         $this->assertFileNotExists($temp);
     }
 
+    public function testRunProcess()
+    {
+        $hello = $this->runProcess('php', '-r', '"echo \'Hello!\';"');
+
+        $this->assertEquals(
+            'Hello!',
+            trim($hello->getOutput())
+        );
+    }
+
     public function testSetPropertyValue()
     {
         $expected = array(
