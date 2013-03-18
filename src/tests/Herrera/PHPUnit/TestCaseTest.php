@@ -181,7 +181,7 @@ class TestCaseTest extends TestCase
 
     public function testRunProcess()
     {
-        $hello = $this->runProcess('php', '-r', '"echo \'Hello!\';"');
+        $hello = $this->runProcess('php', '-r', 'echo \'Hello!\';');
 
         $this->assertEquals(
             'Hello!',
